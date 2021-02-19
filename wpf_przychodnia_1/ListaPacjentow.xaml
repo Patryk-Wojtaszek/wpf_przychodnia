@@ -7,8 +7,23 @@
         mc:Ignorable="d"
         Title="ListaPacjentow" Height="500" Width="800">
     <Grid>
-        <DataGrid x:Name="Grid_Pacjenci" HorizontalAlignment="Left" Height="156" Margin="56,45,0,0" VerticalAlignment="Top" Width="677"/>
+        <DataGrid x:Name="Grid_Pacjenci" HorizontalAlignment="Left" Height="156" Margin="56,45,0,0" VerticalAlignment="Top" Width="677" SelectionChanged="Grid_Pacjenci_SelectionChanged"/>
         <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="696,413,0,0" VerticalAlignment="Top" Width="75" Click="Return_Click"/>
+        <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Left" Margin="647,221,0,0" VerticalAlignment="Top" Width="75" Click="Refresh_Click"/>
+        <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="394,221,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="56,221,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Naziwsko" HorizontalAlignment="Left" Margin="56,252,0,0" VerticalAlignment="Top" Width="129"/>
+        <Label Content="PESEL" HorizontalAlignment="Left" Margin="56,283,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,-0.697"/>
+        <TextBox x:Name="txt_imie" HorizontalAlignment="Left" Height="23" Margin="190,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_nazwisko" HorizontalAlignment="Left" Height="23" Margin="190,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_pesel" HorizontalAlignment="Left" Height="23" Margin="190,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <Button x:Name="Modify" Content="Modyfikuj" HorizontalAlignment="Left" Margin="341,398,0,0" VerticalAlignment="Top" Width="75" Click="Modify_Click" RenderTransformOrigin="-1.43,-6.413"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="423,343,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Naziwsko" HorizontalAlignment="Left" Margin="421,374,0,0" VerticalAlignment="Top" Width="129"/>
+        <Label Content="PESEL" HorizontalAlignment="Left" Margin="421,400,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,-0.697"/>
+        <TextBox x:Name="txt_imie_2" HorizontalAlignment="Left" Height="23" Margin="485,343,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488" TextChanged="txt_imie_Copy_TextChanged"/>
+        <TextBox x:Name="txt_nazwisko_2" HorizontalAlignment="Left" Height="23" Margin="485,374,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_pesel_2" HorizontalAlignment="Left" Height="23" Margin="485,400,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
 
     </Grid>
 </Window>
