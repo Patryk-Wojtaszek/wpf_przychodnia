@@ -12,7 +12,7 @@ namespace wpf_przychodnia_1
     using System;
     using System.Collections.Generic;
     
-    public partial class Pacjenci
+    public partial class  Pacjenci
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Pacjenci()

@@ -18,3 +18,6 @@ C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_prz
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.csproj.CopyComplete
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.exe
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.pdb
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Window1.g.cs
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1_Content.g.cs
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Window1.baml
