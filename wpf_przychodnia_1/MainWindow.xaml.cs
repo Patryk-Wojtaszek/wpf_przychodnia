@@ -24,5 +24,27 @@ namespace wpf_przychodnia_1
         {
             InitializeComponent();
         }
+
+        private void btn_prac_Click(object sender, RoutedEventArgs e)
+        {
+            ListaPracownikow listaPracownikow = new ListaPracownikow();
+            this.Visibility = Visibility.Hidden;
+            listaPracownikow.Show();
+
+        }
+
+        private void btn_pac_Click(object sender, RoutedEventArgs e)
+        {
+            ListaPacjentow listaPacjentow = new ListaPacjentow();
+            this.Visibility = Visibility.Hidden;
+            listaPacjentow.Show();
+        }
+
+        private void btn_umow_Click(object sender, RoutedEventArgs e)
+        {
+            UmowWizyte umowWizyte = new UmowWizyte();
+            this.Visibility = Visibility.Hidden;
+            umowWizyte.Show();
+        }
     }
 }

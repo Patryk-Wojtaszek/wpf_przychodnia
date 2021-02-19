@@ -15,18 +15,25 @@ using System.Windows.Shapes;
 namespace wpf_przychodnia_1
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
+    /// Logika interakcji dla klasy ListaPracownikow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class ListaPracownikow : Window
     {
-        public Window1()
+        public ListaPracownikow()
         {
             InitializeComponent();
-            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
-            var pE = from x in przychodniaEntities.Pacjenci
-                     select x;
 
-            this.Grid_Pacjenci.ItemsSource = pE.ToList(); 
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            var pE = from x in przychodniaEntities.Pracownicy
+                     select x;
+            Grid_Pracownicy.ItemsSource = pE.ToList();
+
+        }
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

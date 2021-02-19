@@ -1,0 +1,14 @@
+﻿<Window x:Class="wpf_przychodnia_1.ListaPracownikow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_przychodnia_1"
+        mc:Ignorable="d"
+        Title="ListaPracownikow" Height="500" Width="800">
+    <Grid>
+        <DataGrid  x:Name="Grid_Pracownicy" HorizontalAlignment="Left" Height="278" Margin="25,21,0,0" VerticalAlignment="Top" Width="736"/>
+        <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="696,413,0,0" VerticalAlignment="Top" Width="75" Click="Return_Click"/>
+
+    </Grid>
+</Window>
