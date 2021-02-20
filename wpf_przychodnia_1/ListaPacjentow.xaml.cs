@@ -63,37 +63,36 @@ namespace wpf_przychodnia_1
 
             przychodniaEntities.Pacjenci.Add(nowyPacjent);
             przychodniaEntities.SaveChanges();
+            txt_imie.Clear();
+            txt_nazwisko.Clear();
+            txt_pesel.Clear();
             
-   
-
         }
+        
 
-        private void Grid_Pacjenci_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (this.Grid_Pacjenci.SelectedIndex >= 0)
-            {
-                if (this.Grid_Pacjenci.SelectedItems.Count >= 0)
-                {
-                    if (this.Grid_Pacjenci.SelectedItems[0].GetType() == typeof(Pacjenci))
-                    {
-                        Pacjenci p = (Pacjenci)this.Grid_Pacjenci.SelectedItems[0];
-                        this.txt_imie_2.Text = p.Imie;
-                        this.txt_nazwisko_2.Text = p.Nazwisko;
-                        this.txt_pesel_2.Text = p.Pesel;
-                    }
-                }
-            }
-        }
 
         private void Modify_Click(object sender, RoutedEventArgs e)
         {
-    
+            int id = int.Parse(txt_id.Text);
+            PrzychodniaEntities przychodniaEntities =new PrzychodniaEntities();
+            var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
+            if (data != null)
+            {
+                data.Imie = txt_imie_2.Text;
+                data.Nazwisko = txt_nazwisko_2.Text;
+                data.Pesel = txt_pesel_2.Text;
+                data.Data_urodzenia = txt_data_2.SelectedDate;
+            }
+            przychodniaEntities.SaveChanges();
+            txt_id.Clear();
+            txt_imie_2.Clear();
+            txt_nazwisko_2.Clear();
+            txt_pesel_2.Clear();
+
+
         }
 
-        private void txt_imie_Copy_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
@@ -106,6 +105,29 @@ namespace wpf_przychodnia_1
                 Regex regex = new Regex("[^0-9]+");
                 e.Handled = regex.IsMatch(e.Text);
             
+        }
+
+        private void txt_id_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            try
+            {
+                int id = int.Parse(txt_id_2.Text);
+                var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
+                przychodniaEntities.Pacjenci.Remove(data);
+                przychodniaEntities.SaveChanges();
+                txt_id_2.Clear();
+            }catch(Exception)
+            {
+                Error error = new Error();
+                error.Show();
+            }
         }
     }
 }

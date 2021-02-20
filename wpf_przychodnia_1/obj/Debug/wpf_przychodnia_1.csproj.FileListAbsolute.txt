@@ -25,3 +25,5 @@ C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_prz
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.exe
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.pdb
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\bin\Debug\wpf_przychodnia_1.pdb
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error.g.cs
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error.baml
