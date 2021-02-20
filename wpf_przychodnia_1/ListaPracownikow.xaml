@@ -10,7 +10,6 @@
         <DataGrid  x:Name="Grid_Pracownicy" HorizontalAlignment="Left" Height="173" Margin="25,21,0,0" VerticalAlignment="Top" Width="736"/>
         <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="652,389,0,0" VerticalAlignment="Top" Width="108" Click="Return_Click"/>
         <Button x:Name="Exit" Content="Zakończ" HorizontalAlignment="Left" Margin="652,426,0,0" VerticalAlignment="Top" Width="108" Click="Exit_Click"/>
-        <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Left" Margin="647,221,0,0" VerticalAlignment="Top" Width="75" Click="Refresh_Click"/>
         <Label Content="Imię" HorizontalAlignment="Left" Margin="56,221,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
         <Label Content="Naziwsko" HorizontalAlignment="Left" Margin="56,252,0,0" VerticalAlignment="Top" Width="129"/>
         <Label Content="Specjalizacja" HorizontalAlignment="Left" Margin="56,283,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,-0.697"/>

@@ -35,12 +35,6 @@ namespace wpf_przychodnia_1
             mainWindow.Show();
         }
 
-        private void Refresh_Click(object sender, RoutedEventArgs e)
-        {
-            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
-            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
-        }
-
         private void Add_Click(object sender, RoutedEventArgs e)
         {
 
@@ -66,7 +60,8 @@ namespace wpf_przychodnia_1
             txt_imie.Clear();
             txt_nazwisko.Clear();
             txt_pesel.Clear();
-            
+
+            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
         }
         
 
@@ -89,7 +84,7 @@ namespace wpf_przychodnia_1
             txt_nazwisko_2.Clear();
             txt_pesel_2.Clear();
 
-
+            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
         }
 
 
@@ -128,6 +123,7 @@ namespace wpf_przychodnia_1
                 Error error = new Error();
                 error.Show();
             }
+            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
         }
     }
 }

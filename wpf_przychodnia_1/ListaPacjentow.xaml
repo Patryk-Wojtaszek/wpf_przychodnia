@@ -9,7 +9,6 @@
     <Grid>
         <DataGrid x:Name="Grid_Pacjenci" HorizontalAlignment="Left" Height="156" Margin="56,45,0,0" VerticalAlignment="Top" Width="677" />
         <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="652,385,0,0" VerticalAlignment="Top" Width="108" Click="Return_Click"/>
-        <Button x:Name="Refresh" Content="Odśwież" HorizontalAlignment="Left" Margin="270,426,0,0" VerticalAlignment="Top" Width="225" Click="Refresh_Click"/>
         <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="220,370,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
         <Label Content="Imię" HorizontalAlignment="Left" Margin="56,221,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
         <Label Content="Naziwsko" HorizontalAlignment="Left" Margin="56,252,0,0" VerticalAlignment="Top" Width="129"/>

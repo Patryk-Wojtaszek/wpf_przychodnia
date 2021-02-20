@@ -41,11 +41,7 @@ namespace wpf_przychodnia_1
 
         }
 
-        private void Refresh_Click(object sender, RoutedEventArgs e)
-        {
-            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
-            this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
-        }
+ 
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +57,13 @@ namespace wpf_przychodnia_1
             };
             przychodniaEntities.Pracownicy.Add(nowyPracownik);
             przychodniaEntities.SaveChanges();
+
+            txt_imie.Clear();
+            txt_nazwisko.Clear();
+            txt_email.Clear();
+            txt_specjalizacja.Clear();
+            
+            this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
         }
     }
 }
