@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Text.RegularExpressions;
 namespace wpf_przychodnia_1
 {
     /// <summary>
@@ -45,21 +45,20 @@ namespace wpf_przychodnia_1
         {
 
       
+  
             
-            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+
+                PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
             Pacjenci nowyPacjent = new Pacjenci()
             {
                 ID_pacjenta = (przychodniaEntities.Pacjenci.Count() + 1),
                 Imie = txt_imie.Text,
                 Nazwisko = txt_nazwisko.Text,
-                Pesel = txt_pesel.Text
+                Pesel = txt_pesel.Text,
+                Data_urodzenia = txt_data.SelectedDate
                 
                 
                 
-              
-               
-                
-
             };
 
             przychodniaEntities.Pacjenci.Add(nowyPacjent);
@@ -94,6 +93,19 @@ namespace wpf_przychodnia_1
         private void txt_imie_Copy_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void txt_pesel_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            
+          
+                Regex regex = new Regex("[^0-9]+");
+                e.Handled = regex.IsMatch(e.Text);
+            
         }
     }
 }

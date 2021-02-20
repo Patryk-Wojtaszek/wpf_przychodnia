@@ -46,5 +46,11 @@ namespace wpf_przychodnia_1
             this.Visibility = Visibility.Hidden;
             umowWizyte.Show();
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            
+        }
     }
 }

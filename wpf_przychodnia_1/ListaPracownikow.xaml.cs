@@ -35,5 +35,32 @@ namespace wpf_przychodnia_1
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            Pracownicy nowyPracownik = new Pracownicy()
+            {
+                ID_pracownika = ((przychodniaEntities.Pracownicy.Count() + 1)),
+                Imie = txt_imie.Text,
+                Nazwisko = txt_nazwisko.Text,
+                Specjalizacja = txt_specjalizacja.Text,
+                 Data_urodzenia = txt_data.SelectedDate,
+                 Email = txt_email.Text
+            };
+            przychodniaEntities.Pracownicy.Add(nowyPracownik);
+            przychodniaEntities.SaveChanges();
+        }
     }
 }
