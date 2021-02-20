@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace wpf_przychodnia_1
 {
@@ -63,6 +64,47 @@ namespace wpf_przychodnia_1
             txt_email.Clear();
             txt_specjalizacja.Clear();
             
+            this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
+        }
+
+        private void Modify_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            int a = int.Parse(txt_id.Text);
+            var data = przychodniaEntities.Pracownicy.FirstOrDefault(x => x.ID_pracownika == a);
+            if (data != null)
+            {
+                data.Imie = txt_imie_2.Text;
+                data.Nazwisko = txt_nazwisko_2.Text;
+                data.Email = txt_email_2.Text;
+                data.Specjalizacja = txt_specjalizacja_2.Text;
+                data.Data_urodzenia = txt_data_2.SelectedDate;
+            }
+            przychodniaEntities.SaveChanges();
+            txt_id.Clear();
+            txt_imie_2.Clear();
+            txt_nazwisko_2.Clear();
+            txt_email_2.Clear();
+            txt_specjalizacja_2.Clear();
+            this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
+
+
+        }
+
+        private void txt_id_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            int a = int.Parse(txt_id_3.Text);
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            var data = przychodniaEntities.Pracownicy.FirstOrDefault(x => x.ID_pracownika == a);
+            przychodniaEntities.Pracownicy.Remove(data);
+            przychodniaEntities.SaveChanges();
+            txt_id_3.Clear();
             this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
         }
     }

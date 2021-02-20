@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_przychodnia_1"
         mc:Ignorable="d"
-        Title="ListaPracownikow" Height="500" Width="800">
+        Title="ListaPracownikow" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid  x:Name="Grid_Pracownicy" HorizontalAlignment="Left" Height="173" Margin="25,21,0,0" VerticalAlignment="Top" Width="736"/>
         <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="652,389,0,0" VerticalAlignment="Top" Width="108" Click="Return_Click"/>
@@ -16,11 +17,27 @@
         <TextBox x:Name="txt_imie" HorizontalAlignment="Left" Height="23" Margin="190,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
         <TextBox x:Name="txt_nazwisko" HorizontalAlignment="Left" Height="23" Margin="190,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
         <TextBox x:Name="txt_specjalizacja" HorizontalAlignment="Left" Height="23" Margin="190,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
-        <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="394,221,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
+        <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="225,389,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
         <Label Content="Data Urodzenia" HorizontalAlignment="Left" Margin="56,314,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="56,345,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
         <TextBox x:Name="txt_email" HorizontalAlignment="Left" Height="23" Margin="190,348,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
-        <DatePicker x:Name="txt_data" HorizontalAlignment="Left" Margin="190,319,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.518,-0.223"/>
+        <DatePicker x:Name="txt_data" HorizontalAlignment="Left" Margin="190,316,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.518,-0.223"/>
+        <Label Content="ID&#xD;&#xA;" HorizontalAlignment="Left" Margin="393,221,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Imię" HorizontalAlignment="Left" Margin="393,247,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Nazwisko&#x9;" HorizontalAlignment="Left" Margin="393,273,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Specjalizacja" HorizontalAlignment="Left" Margin="393,299,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Data Urodzenia" HorizontalAlignment="Left" Margin="393,325,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="Email&#xD;&#xA;" HorizontalAlignment="Left" Margin="393,348,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694" Height="23"/>
+        <TextBox x:Name="txt_id" PreviewTextInput="txt_id_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="493,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_imie_2" HorizontalAlignment="Left" Height="23" Margin="493,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_nazwisko_2" HorizontalAlignment="Left" Height="23" Margin="493,275,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_specjalizacja_2" HorizontalAlignment="Left" Height="23" Margin="493,299,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <TextBox x:Name="txt_email_2" HorizontalAlignment="Left" Height="23" Margin="493,348,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" RenderTransformOrigin="-0.36,-0.488"/>
+        <Button x:Name="Modify" Content="Modyfikuj" HorizontalAlignment="Left" Margin="525,389,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.112,-1.094" Click="Modify_Click"/>
+        <DatePicker x:Name="txt_data_2" HorizontalAlignment="Left" Margin="493,325,0,0" VerticalAlignment="Top" Width="155" RenderTransformOrigin="0.518,-0.223"/>
+        <Label Content="ID&#xA;" HorizontalAlignment="Left" Margin="663,260,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.501,3.694" Height="38"/>
+        <TextBox x:Name="txt_id_3" PreviewTextInput="txt_id_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="695,260,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66" RenderTransformOrigin="-0.36,-0.488"/>
+        <Button x:Name="Delete" Content="Usuń" HorizontalAlignment="Left" Margin="695,298,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click"/>
 
     </Grid>
 </Window>

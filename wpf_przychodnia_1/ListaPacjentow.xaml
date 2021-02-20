@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_przychodnia_1"
         mc:Ignorable="d"
-        Title="ListaPacjentow" Height="500" Width="800">
+        Title="ListaPacjentow" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name="Grid_Pacjenci" HorizontalAlignment="Left" Height="156" Margin="56,45,0,0" VerticalAlignment="Top" Width="677" />
         <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="652,385,0,0" VerticalAlignment="Top" Width="108" Click="Return_Click"/>

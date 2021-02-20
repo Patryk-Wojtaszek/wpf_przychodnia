@@ -68,23 +68,30 @@ namespace wpf_przychodnia_1
 
         private void Modify_Click(object sender, RoutedEventArgs e)
         {
-            int id = int.Parse(txt_id.Text);
-            PrzychodniaEntities przychodniaEntities =new PrzychodniaEntities();
-            var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
-            if (data != null)
+            try
             {
-                data.Imie = txt_imie_2.Text;
-                data.Nazwisko = txt_nazwisko_2.Text;
-                data.Pesel = txt_pesel_2.Text;
-                data.Data_urodzenia = txt_data_2.SelectedDate;
-            }
-            przychodniaEntities.SaveChanges();
-            txt_id.Clear();
-            txt_imie_2.Clear();
-            txt_nazwisko_2.Clear();
-            txt_pesel_2.Clear();
+                int id = int.Parse(txt_id.Text);
+                PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+                var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
+                if (data != null)
+                {
+                    data.Imie = txt_imie_2.Text;
+                    data.Nazwisko = txt_nazwisko_2.Text;
+                    data.Pesel = txt_pesel_2.Text;
+                    data.Data_urodzenia = txt_data_2.SelectedDate;
+                }
+                przychodniaEntities.SaveChanges();
+                txt_id.Clear();
+                txt_imie_2.Clear();
+                txt_nazwisko_2.Clear();
+                txt_pesel_2.Clear();
 
-            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
+                this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
+            } catch (Exception)
+            {
+                Error error = new Error();
+                error.Show();
+            }
         }
 
 

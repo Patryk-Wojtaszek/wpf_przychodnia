@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_przychodnia_1"
         mc:Ignorable="d"
-        Title="Error" Height="450" Width="800">
-    <Grid>
-        <Label Content="Wpisz ID" HorizontalAlignment="Left" Height="219" Margin="103,71,0,0" VerticalAlignment="Top" Width="610"/>
+        Title="Error" Height="200" Width="400"
+      WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,12,0">
+
+        <Label Content="Wpisz ID" HorizontalAlignment="Left" Height="95" Margin="34,31,0,0" VerticalAlignment="Top" Width="248" FontSize="60" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
