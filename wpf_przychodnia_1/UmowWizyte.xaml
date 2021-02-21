@@ -8,7 +8,19 @@
         Title="UmowWizyte" Height="500" Width="800"
          WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="696,413,0,0" VerticalAlignment="Top" Width="75" Click="Return_Click"/>
+        <Button x:Name="Return" Content="Powrót" HorizontalAlignment="Left" Margin="652,380,0,0" VerticalAlignment="Top" Width="108" Click="Return_Click"/>
+        <Button x:Name="Exit" Content="Zakończ" HorizontalAlignment="Left" Margin="652,426,0,0" VerticalAlignment="Top" Width="108" Click="Exit_Click"/>
+        <DataGrid x:Name="Grid_wizyta" HorizontalAlignment="Left" Height="150" Margin="56,36,0,0" VerticalAlignment="Top" Width="323" RenderTransformOrigin="0.162,0.068" SelectionChanged="Grid_wizyta_SelectionChanged"/>
+        <Label Content="ID Pacjenta&#xD;&#xA;" HorizontalAlignment="Left" Margin="56,221,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694" Height="39"/>
+        <Label Content="Data Wizyty" HorizontalAlignment="Left" Margin="56,265,0,0" VerticalAlignment="Top" Width="129" RenderTransformOrigin="0.501,3.694"/>
+        <DatePicker x:Name="txt_data" HorizontalAlignment="Left" Margin="190,267,0,0" VerticalAlignment="Top" Width="155"/>
+        <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="138,310,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
+        <TextBox x:Name="txt_Add" HorizontalAlignment="Left" Height="23" Margin="190,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="grid_list_pacjent" HorizontalAlignment="Left" Height="150" Margin="438,36,0,0" VerticalAlignment="Top" Width="277"/>
+        <TextBox x:Name="txt_id_2" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="56,401,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="97" RenderTransformOrigin="-0.36,-0.488" />
+        <Label Content="ID" HorizontalAlignment="Left" Margin="24,401,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.501,3.694"/>
+        <Button x:Name="Delete" PreviewTextInput="txt_id_pacjent_PreviewTextInput" Content="Usuń" HorizontalAlignment="Left" Margin="158,404,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click" RenderTransformOrigin="0.444,1.068"/>
+
 
     </Grid>
 </Window>

@@ -23,7 +23,7 @@ namespace wpf_przychodnia_1
         public int ID_rejestracji { get; set; }
         public Nullable<int> Pacjenci_ID { get; set; }
         public Nullable<System.DateTime> Termin { get; set; }
-    
+
         public virtual Pacjenci Pacjenci { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Wizyta> Wizyta { get; set; }
