@@ -19,6 +19,7 @@ namespace wpf_przychodnia_1
     /// </summary>
     public partial class ListaPacjentow : Window
     {
+        // inicjacja gridu zawierającego liste wszystkicj pacjentów
         public ListaPacjentow()
         {
             InitializeComponent();
@@ -27,25 +28,72 @@ namespace wpf_przychodnia_1
                      select x;
             Grid_Pacjenci.ItemsSource = pE.ToList();
         }
+        // napotkałem się na problem w sytuacji gdy np.  mam 8 pacjentów, usuwam pacjenta o id 6 i 7 , a następnie próbuje dodać nowych
+        // ta lista i zmiany w Add_Click i Modify_Click wydaję mi się , że rozwiązały problem, aczkolwiek pewnie był o wiele łatwiejszy sposób by to osiągnąć
+        public List<int> deletedIds = new List<int>();
 
+        // powrót do głównej strony
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+        // usunięcie pacjenta o podanym nr id
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            try
+            {
+                int id = int.Parse(txt_id_2.Text);
+                var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
+                przychodniaEntities.Pacjenci.Remove(data);
+                 // info nad list deleted ids
+                deletedIds.Add(id);
+                deletedIds.Sort();
+              
 
+            }
+            catch (Exception)
+            {
+                Error error = new Error();
+                error.Show();
+            }
+
+            przychodniaEntities.SaveChanges();
+            txt_id_2.Clear();
+
+
+            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
+        }
+
+        //dodanie nowego pacjenta
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
 
-      
-  
-            
+            int counter = 0;
+            try
+            {
+                if (deletedIds.ElementAt(0) <= przychodniaEntities.Pacjenci.Count())
+                {
+                    counter = deletedIds.ElementAt(0);
+                    deletedIds.RemoveAt(0);
+                }
+                else
+                {
+                    counter = (przychodniaEntities.Pacjenci.Count() + 1);
+                    deletedIds.Clear();
+                }
+            }catch (Exception)
+            {
+                counter = (przychodniaEntities.Pacjenci.Count() + 1);
+            }// info nad list deleted ids
 
-                PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+
             Pacjenci nowyPacjent = new Pacjenci()
             {
-                ID_pacjenta = (przychodniaEntities.Pacjenci.Count() + 1),
+                ID_pacjenta =counter ,
                 Imie = txt_imie.Text,
                 Nazwisko = txt_nazwisko.Text,
                 Pesel = txt_pesel.Text,
@@ -65,7 +113,7 @@ namespace wpf_przychodnia_1
         }
         
 
-
+        // edycja pacjenta
         private void Modify_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -94,12 +142,12 @@ namespace wpf_przychodnia_1
             }
         }
 
-
+        // wyłączenie aplikacji
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
-
+        // pola pesel i id przyjmują tylko argumenty cyfrowe
         private void txt_pesel_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             
@@ -115,22 +163,6 @@ namespace wpf_przychodnia_1
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
-            try
-            {
-                int id = int.Parse(txt_id_2.Text);
-                var data = przychodniaEntities.Pacjenci.FirstOrDefault(x => x.ID_pacjenta == id);
-                przychodniaEntities.Pacjenci.Remove(data);
-                przychodniaEntities.SaveChanges();
-                txt_id_2.Clear();
-            }catch(Exception)
-            {
-                Error error = new Error();
-                error.Show();
-            }
-            this.Grid_Pacjenci.ItemsSource = przychodniaEntities.Pacjenci.ToList();
-        }
+        
     }
 }

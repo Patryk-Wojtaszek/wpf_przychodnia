@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace wpf_przychodnia_1
 {
     /// <summary>
-    /// Logika interakcji dla klasy Error.xaml
+    /// okienko error przypominające o wpisaniu id przy próbie modyfikacji lub usunięcia wiersza
     /// </summary>
     public partial class Error : Window
     {

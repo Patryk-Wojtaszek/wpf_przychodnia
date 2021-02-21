@@ -42,14 +42,32 @@ namespace wpf_przychodnia_1
 
         }
 
- 
+        public List<int> deletedIds = new List<int>();
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            int counter = 0;
+            try
+            {
+                if (deletedIds.ElementAt(0) <= przychodniaEntities.Pracownicy.Count())
+                {
+                    counter = deletedIds.ElementAt(0);
+                    deletedIds.RemoveAt(0);
+                }
+                else
+                {
+                    counter = (przychodniaEntities.Pracownicy.Count() + 1);
+                    deletedIds.Clear();
+                }
+            }
+            catch (Exception)
+            {
+                counter = (przychodniaEntities.Pracownicy.Count() + 1);
+            }// info nad list deleted ids
             Pracownicy nowyPracownik = new Pracownicy()
             {
-                ID_pracownika = ((przychodniaEntities.Pracownicy.Count() + 1)),
+                ID_pracownika = counter,
                 Imie = txt_imie.Text,
                 Nazwisko = txt_nazwisko.Text,
                 Specjalizacja = txt_specjalizacja.Text,
@@ -99,10 +117,20 @@ namespace wpf_przychodnia_1
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            int a = int.Parse(txt_id_3.Text);
             PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
-            var data = przychodniaEntities.Pracownicy.FirstOrDefault(x => x.ID_pracownika == a);
-            przychodniaEntities.Pracownicy.Remove(data);
+            try
+            {
+                int a = int.Parse(txt_id_3.Text);
+                var data = przychodniaEntities.Pracownicy.FirstOrDefault(x => x.ID_pracownika == a);
+                przychodniaEntities.Pracownicy.Remove(data);
+                deletedIds.Add(a);
+                deletedIds.Sort();
+            
+            } catch (Exception)
+            {
+                Error error = new Error();
+                error.Show();
+            }
             przychodniaEntities.SaveChanges();
             txt_id_3.Clear();
             this.Grid_Pracownicy.ItemsSource = przychodniaEntities.Pracownicy.ToList();
