@@ -26,7 +26,6 @@ C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_prz
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\bin\Debug\wpf_przychodnia_1.pdb
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error.g.cs
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error.baml
-C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.csprojAssemblyReference.cache
-C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error2.g.cs
 C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\Error2.baml
+C:\Users\sniqq\Desktop\wpf\wpf_przychodnia_1\wpf_przychodnia_1\obj\Debug\wpf_przychodnia_1.csprojAssemblyReference.cache

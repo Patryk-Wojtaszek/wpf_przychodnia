@@ -100,12 +100,13 @@ namespace wpf_przychodnia_1
                 Grid_wizyta.ItemsSource = pe.ToList();
                 txt_Add.Clear();
 
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 Error2 error = new Error2();
                 error.Show();
             }
-        } 
+        }
 
         private void txt_id_pacjent_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
@@ -133,12 +134,31 @@ namespace wpf_przychodnia_1
                          select new { x.ID_rejestracji, x.Pacjenci_ID, x.Termin };
                 Grid_wizyta.ItemsSource = pe.ToList();
                 txt_id_2.Clear();
-            }catch (Exception)
+            }
+            catch (Exception)
             {
                 Error error = new Error();
                 error.Show();
             }
-            }
+        }
 
+        private void Modify_Click(object sender, RoutedEventArgs e)
+        {
+            PrzychodniaEntities przychodniaEntities = new PrzychodniaEntities();
+            int id = int.Parse(txt_id_3.Text);
+            var modife = przychodniaEntities.Rejestracja.FirstOrDefault(x => x.ID_rejestracji == id);
+            if (modife != null)
+            {
+                modife.Pacjenci_ID = int.Parse(txt_pacjen_mod.Text);
+                modife.Termin = txt_data_2.SelectedDate;
+            }
+            przychodniaEntities.SaveChanges();
+            txt_id_3.Clear();
+            txt_pacjen_mod.Clear();
+            var pe = from x in przychodniaEntities.Rejestracja
+                     select new { x.ID_rejestracji, x.Pacjenci_ID, x.Termin };
+            Grid_wizyta.ItemsSource = pe.ToList();
+
+        }
     }
 }

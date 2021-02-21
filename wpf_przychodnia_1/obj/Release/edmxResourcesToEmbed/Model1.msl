@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrzychodniaModelStoreContainer" CdmEntityContainer="PrzychodniaEntities">
+    <EntitySetMapping Name="Pacjenci">
+      <EntityTypeMapping TypeName="PrzychodniaModel.Pacjenci">
+        <MappingFragment StoreEntitySet="Pacjenci">
+          <ScalarProperty Name="ID_pacjenta" ColumnName="ID_pacjenta" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Data_urodzenia" ColumnName="Data_urodzenia" />
+          <ScalarProperty Name="Pesel" ColumnName="Pesel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pracownicy">
+      <EntityTypeMapping TypeName="PrzychodniaModel.Pracownicy">
+        <MappingFragment StoreEntitySet="Pracownicy">
+          <ScalarProperty Name="ID_pracownika" ColumnName="ID_pracownika" />
+          <ScalarProperty Name="Specjalizacja" ColumnName="Specjalizacja" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Data_urodzenia" ColumnName="Data_urodzenia" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rejestracja">
+      <EntityTypeMapping TypeName="PrzychodniaModel.Rejestracja">
+        <MappingFragment StoreEntitySet="Rejestracja">
+          <ScalarProperty Name="ID_rejestracji" ColumnName="ID_rejestracji" />
+          <ScalarProperty Name="Pacjenci_ID" ColumnName="Pacjenci_ID" />
+          <ScalarProperty Name="Termin" ColumnName="Termin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wizyta">
+      <EntityTypeMapping TypeName="PrzychodniaModel.Wizyta">
+        <MappingFragment StoreEntitySet="Wizyta">
+          <ScalarProperty Name="ID_wizyty" ColumnName="ID_wizyty" />
+          <ScalarProperty Name="Rejestracja_ID" ColumnName="Rejestracja_ID" />
+          <ScalarProperty Name="Pracownicy_ID" ColumnName="Pracownicy_ID" />
+          <ScalarProperty Name="Pacjenci_ID" ColumnName="Pacjenci_ID" />
+          <ScalarProperty Name="Kod_choroby" ColumnName="Kod_choroby" />
+          <ScalarProperty Name="Diagnoza" ColumnName="Diagnoza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

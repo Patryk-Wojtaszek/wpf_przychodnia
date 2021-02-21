@@ -17,9 +17,16 @@
         <Button x:Name="Add" Content="Dodaj" HorizontalAlignment="Left" Margin="138,310,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" RenderTransformOrigin="-1.43,-6.413"/>
         <TextBox x:Name="txt_Add" HorizontalAlignment="Left" Height="23" Margin="190,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <DataGrid x:Name="grid_list_pacjent" HorizontalAlignment="Left" Height="150" Margin="438,36,0,0" VerticalAlignment="Top" Width="277"/>
-        <TextBox x:Name="txt_id_2" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="56,401,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="97" RenderTransformOrigin="-0.36,-0.488" />
-        <Label Content="ID" HorizontalAlignment="Left" Margin="24,401,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.501,3.694"/>
-        <Button x:Name="Delete" PreviewTextInput="txt_id_pacjent_PreviewTextInput" Content="Usuń" HorizontalAlignment="Left" Margin="158,404,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click" RenderTransformOrigin="0.444,1.068"/>
+        <TextBox x:Name="txt_id_2" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="133,401,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="97" RenderTransformOrigin="-0.36,-0.488" />
+        <Label Content="ID wizyty" HorizontalAlignment="Left" Margin="24,401,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="0.501,3.694"/>
+        <Button x:Name="Delete" PreviewTextInput="txt_id_pacjent_PreviewTextInput" Content="Usuń" HorizontalAlignment="Left" Margin="235,404,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click" RenderTransformOrigin="0.444,1.068"/>
+        <Label Content="ID wizyty" HorizontalAlignment="Left" Margin="438,273,0,0" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.501,3.694"/>
+        <Label Content="ID Pacjenta&#xA;" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Margin="438,304,0,0" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.501,3.694" Height="39"/>
+        <Label Content="Data Wizyty" HorizontalAlignment="Left" Margin="438,343,0,0" VerticalAlignment="Top" Width="81" RenderTransformOrigin="0.501,3.694"/>
+        <TextBox x:Name="txt_id_3" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="524,276,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="97" RenderTransformOrigin="-0.36,-0.488" />
+        <TextBox x:Name="txt_pacjen_mod" PreviewTextInput="txt_id_pacjent_PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="524,304,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="3.173,3.67"/>
+        <DatePicker x:Name="txt_data_2" HorizontalAlignment="Left" Margin="524,343,0,0" VerticalAlignment="Top" Width="155"/>
+        <Button x:Name="Modify"  Content="Edytuj" HorizontalAlignment="Left" Margin="670,310,0,0" VerticalAlignment="Top" Width="96" Click="Modify_Click"/>
 
 
     </Grid>
